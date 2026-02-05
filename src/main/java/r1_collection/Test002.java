@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Test002 {
+
     static void main() {
 
         List<Integer> list = new ArrayList<>();
