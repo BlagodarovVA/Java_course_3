@@ -1,6 +1,6 @@
 package main.java.r1_collection;
 
-public class Test005 {
+public class Test05 {
     public static void main(String[] args) {
         MyLinkedList myLinkedList = new MyLinkedList();
         myLinkedList.add(1);
