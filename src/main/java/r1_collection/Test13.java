@@ -3,7 +3,7 @@ package main.java.r1_collection;
 import java.util.*;
 
 public class Test13 {
-    static void main() {
+    public static void main(String[] args) {
 
         List<Person2> person2List = new ArrayList<>();
         Set<Person2> person2Set = new TreeSet<>();
