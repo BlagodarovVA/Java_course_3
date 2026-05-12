@@ -3,7 +3,7 @@ package main.java.r1_collection;
 import java.util.*;
 
 public class Test12 {
-    static void main(String[] args) {
+    public static void main(String[] args) {
 
         List<String> animals = new ArrayList<>();
         animals.add("monkey");
@@ -24,7 +24,7 @@ public class Test12 {
 
         System.out.println(numbers);
 
-        // Без создания класса:
+        // Без создания класса, компаратор как параметр для метода сравнения:
         /*
         numbers.sort(new Comparator<Integer>() {
             @Override
@@ -34,16 +34,31 @@ public class Test12 {
         });
         */
 
-        // замена на лямбда-выражение
+        // замена на лямбда-выражение, короче
         /*
         numbers.sort((o1, o2) -> o2.compareTo(o1));
         */
 
         // ну тут ваще пиздец короче некуда
         numbers.sort(Comparator.reverseOrder());
-
         System.out.println(numbers);
 
+
+        List<Person1> people = new ArrayList<>();
+        people.add(new Person1(3, "Sharik"));
+        people.add(new Person1(1, "Bobik"));
+        people.add(new Person1(2, "Tuzik"));
+
+        System.out.println(people);
+        people.sort(new Comparator<Person1>() {
+            @Override
+            public int compare(Person1 o1, Person1 o2) {
+                if (o1.getId() > o2.getId()) return 1;
+                if (o1.getId() < o2.getId()) return -1;
+                return 0;
+            }
+        });
+        System.out.println(people);
     }
 }
 
@@ -64,12 +79,24 @@ class StringLengthComparator implements Comparator<String>{
 }
 
 
-class BackwardsIntegerComparator implements Comparator<Integer>{
+class Person1 {
+    private int id;
+    String name;
+
+    public Person1(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     @Override
-    public int compare(Integer o1, Integer o2) {
-        if (o1 > o2) return -1;
-        if (o1 < o2) return 1;
-        return 0;
-        // или упрощенно return o2.compareTo(o1);
+    public String toString() {
+        return "Person1{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                "}\n";
+    }
+
+    public int getId() {
+        return id;
     }
 }
