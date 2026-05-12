@@ -56,6 +56,7 @@ class Person{
                 '}';
     }
 
+    // equals - медленный метод
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
@@ -63,6 +64,7 @@ class Person{
         return id == person.id && Objects.equals(name, person.name);
     }
 
+    // hashCode - быстрый метод
     @Override
     public int hashCode() {
         return Objects.hash(id, name);
