@@ -16,7 +16,6 @@ public class Test13 {
         System.out.println(person2List);
         System.out.println(person2Set);
 
-
     }
 
     private static void addElements(Collection<Person2> collection){
