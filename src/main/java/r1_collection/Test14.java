@@ -1,6 +1,5 @@
 package main.java.r1_collection;
 
-import java.util.LinkedList;
 import java.util.Queue;
 import java.util.concurrent.ArrayBlockingQueue;
 
