@@ -1,7 +1,5 @@
 package main.java.r1_collection;
 
-import org.w3c.dom.Node;
-
 import java.util.Arrays;
 
 public class MyLinkedList {
